@@ -12,7 +12,7 @@ async def root():
 
 @app.get("/helper/{language}/{codeLine}")
 async def helper(language: str, codeLine: str):
-    pattern = r'```(.*?)\n(.*?)\n```'
+    pattern = r'```([\s\S]*?)\n([\s\S]*?)\n```'
     response = g4f.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user",
@@ -22,9 +22,10 @@ async def helper(language: str, codeLine: str):
     matches = re.findall(pattern, response)
 
     if matches:
-        return {"response_type": "OK", "response": matches[0][1]}
+        return {"response_type": "OK",
+                "response": matches[0][1],
+                "all_response": matches}
     else:
         return {"response_type": "error",
-                "response": "Error: No code block found or code correct",
-                "full_response": response
-                }
+                "response": "Error: No code block found or code correct.",
+                "full_response": response}
