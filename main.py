@@ -16,7 +16,7 @@ async def helper(language: str, codeLine: str):
     response = g4f.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user",
-                   "content": "{language}. fix code line: {codeLine}".format(language=language, codeLine=codeLine)}],
+                   "content": "No text. Only code in answer. {language}. Fix code line: {codeLine}".format(language=language, codeLine=codeLine)}],
     )
 
     matches = re.findall(pattern, response)
@@ -24,5 +24,7 @@ async def helper(language: str, codeLine: str):
     if matches:
         return {"response_type": "OK", "response": matches[0][1]}
     else:
-        print(response)
-        return {"response_type": "error", "response": "Error: No code block found or code correct"}
+        return {"response_type": "error",
+                "response": "Error: No code block found or code correct",
+                "full_response": response
+                }
