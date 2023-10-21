@@ -1,0 +1,3 @@
+http://3.75.85.111 {
+    reverse_proxy localhost:8000
+}
