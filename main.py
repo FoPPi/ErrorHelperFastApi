@@ -24,7 +24,8 @@ async def helper(language: str, codeLine: str):
     if matches:
         return {"response_type": "OK",
                 "response": matches[0][1],
-                "all_response": matches}
+                "all_response": matches,
+                "full_response": response}
     else:
         return {"response_type": "error",
                 "response": "Error: No code block found or code correct.",

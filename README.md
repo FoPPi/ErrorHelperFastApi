@@ -1,5 +1,5 @@
 <div align=center>
-   <img width=200 src=https://i.ibb.co/BTsjBGh/IMG-20231025-141200-539.png alt='logo' />
+   <img width=250 src=https://i.ibb.co/BTsjBGh/IMG-20231025-141200-539.png alt='logo' />
    <h1>ErrorHelperFastApi - FastAPI for Error Helper Extension</h1>
 </div>
 
@@ -63,7 +63,8 @@ curl http://127.0.0.1:8000/helper/python/def%20hello%28%29%3A%0A%20%20pritn%28%2
   "all_response": [[
     "python",
     "def hello():\n    print('Hello, World!')"
-  ]]
+  ]],
+  "full_response": "text"
 }
 ```
 
