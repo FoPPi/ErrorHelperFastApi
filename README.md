@@ -1,4 +1,7 @@
-# ErrorHelperFastApi - FastAPI for Error Helper Extension
+<div align=center>
+   <img width=200 src=https://i.ibb.co/BTsjBGh/IMG-20231025-141200-539.png alt='logo' />
+   <h1>ErrorHelperFastApi - FastAPI for Error Helper Extension</h1>
+</div>
 
 **ErrorHelperFastApi** is a FastAPI project that provides an API for the "Error Helper" Visual Studio Code extension. This API allows the extension to request code fixes for selected code lines and receive improved code from the server.
 
